@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gan-common/gan-common.iml" filepath="$PROJECT_DIR$/gan-common/gan-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gan-manager/gan-manager.iml" filepath="$PROJECT_DIR$/gan-manager/gan-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gan-manager/gan-manager-dao/gan-manager-dao.iml" filepath="$PROJECT_DIR$/gan-manager/gan-manager-dao/gan-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gan-manager/gan-manager-interface/gan-manager-interface.iml" filepath="$PROJECT_DIR$/gan-manager/gan-manager-interface/gan-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gan-manager/gan-manager-pojo/gan-manager-pojo.iml" filepath="$PROJECT_DIR$/gan-manager/gan-manager-pojo/gan-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gan-manager/gan-manager-service/gan-manager-service.iml" filepath="$PROJECT_DIR$/gan-manager/gan-manager-service/gan-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gan-manager/gan-manager-web/gan-manager-web.iml" filepath="$PROJECT_DIR$/gan-manager/gan-manager-web/gan-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ganparent.iml" filepath="$PROJECT_DIR$/ganparent.iml" />
+    </modules>
+  </component>
+</project>

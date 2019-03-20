@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gan-common" />
+        <module name="gan-manager-dao" />
+        <module name="gan-manager-interface" />
+        <module name="gan-manager-pojo" />
+        <module name="gan-manager-service" />
+        <module name="gan-manager-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gan-common" target="1.7" />
+      <module name="gan-manager" target="1.7" />
+      <module name="gan-manager-dao" target="1.7" />
+      <module name="gan-manager-interface" target="1.7" />
+      <module name="gan-manager-pojo" target="1.7" />
+      <module name="gan-manager-service" target="1.7" />
+      <module name="gan-manager-web" target="1.7" />
+      <module name="ganparent" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
