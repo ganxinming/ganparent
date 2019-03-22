@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/gan-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gan-manager" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gan-manager/gan-manager-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gan-manager/gan-manager-interceptor" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gan-manager/gan-manager-interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gan-manager/gan-manager-pojo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gan-manager/gan-manager-service" charset="UTF-8" />

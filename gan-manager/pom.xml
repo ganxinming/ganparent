@@ -34,6 +34,9 @@
                 <configuration>
                     <path>/</path>
                     <port>8080</port>
+                    <contextReloadable>true</contextReloadable>
+                    <!-- 解决get请求乱码-->
+                    <uriEncoding>UTF-8</uriEncoding>
                 </configuration>
             </plugin>
         </plugins>

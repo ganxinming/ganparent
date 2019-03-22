@@ -18,6 +18,7 @@
       <module name="gan-common" target="1.7" />
       <module name="gan-manager" target="1.7" />
       <module name="gan-manager-dao" target="1.7" />
+      <module name="gan-manager-interceptor" target="1.7" />
       <module name="gan-manager-interface" target="1.7" />
       <module name="gan-manager-pojo" target="1.7" />
       <module name="gan-manager-service" target="1.7" />
