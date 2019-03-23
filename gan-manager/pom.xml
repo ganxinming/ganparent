@@ -38,6 +38,7 @@
                     <!-- 解决get请求乱码-->
                     <uriEncoding>UTF-8</uriEncoding>
                 </configuration>
+
             </plugin>
         </plugins>
     </build>

@@ -51,12 +51,12 @@ public class SpringMVCController {
         return view;
     }
 
-    @RequestMapping("/")
-    public String getIndex1(){
+
+    @RequestMapping("/11")
+    public String getIndex11(){
+
         return "index";
     }
-
-
     //测试时间类型
     @RequestMapping("/getItem")
     public void getItem(TbItem item){
@@ -74,4 +74,5 @@ public class SpringMVCController {
     public String testRedict(){
         return  "redirect: /user";
     }
+
 }

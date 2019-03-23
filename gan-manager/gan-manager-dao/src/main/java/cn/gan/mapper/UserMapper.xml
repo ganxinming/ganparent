@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gan.mapper.UserMapper">
+    <!-- 根据用户ID查询用户信息 -->
+    <!-- select：表示一个MappedStatement对象 -->
+    <!-- id：statement的唯一标示 -->
+    <!-- #{}：表示一个占位符？ -->
+    <!-- #{id}：里面的id表示输入参数的参数名称，如果该参数是简单类型，那么#{}里面的参数名称可以任意 -->
+    <!-- parameterType：输入参数的java类型 -->
+    <!-- resultType：输出结果的所映射的java类型（单条结果所对应的java类型） -->
+    <!-- 根据用户ID查询用户信息 -->
+    <!--注意这个返回类型，如果不在mybatis配置文件里配置别名，返回类型必须是包名+类名，
+    除非在配置文件里配置别名.
+    -->
+    <select id="findUserById" parameterType="int" resultType="User">
+       SELECT *
+        FROM USER WHERE id=#{id}
+    </select>
+
+    <!-- 根据用户名称模糊查询用户列表 -->
+    <!-- ${}：表示一个sql的连接符 -->
+    <!-- ${value}：里面的value表示输入参数的参数名称，如果该参数是简单类型，那么${}里面的参数名称必须是value -->
+    <!-- ${}这种写法存在sql注入的风险，所以要慎用！！但是在一些场景下，必须使用${}，比如排序时，动态传入排序的列名，${}会原样输出，不加解释 -->
+    <select id="findUserByName" parameterType="java.lang.String" resultType="User">
+        SELECT *
+        FROM USER WHERE username LIKE '%${value}%'
+
+    </select>
+
+    <!-- 添加用户 -->
+    <!-- selectKey：查询主键，在标签内需要输入查询主键的sql -->
+    <!-- order：指定查询主键的sql和insert语句的执行顺序，相当于insert语句来说 -->
+    <!-- LAST_INSERT_ID：该函数是mysql的函数，获取自增主键的ID，它必须配合insert语句一起使用 -->
+    <insert id="insertUser" parameterType="cn.gan.pojo.User">
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO USER
+        (username)
+        VALUES(#{username})
+    </insert>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE
+        FROM  USER  WHERE id=#{id}
+    </delete>
+
+    <update id="updateUser" parameterType="User">
+
+        UPDATE
+        USER  SET username=#{username} where id=#{id}
+    </update>
+
+    <select id="findAllUser" resultType="User">
+        SELECT *
+        FROM  USER
+    </select>
+</mapper>

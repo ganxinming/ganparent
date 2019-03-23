@@ -13,7 +13,6 @@ public class JSONController {
     public String jsonJsp(){
         return "jsonTest";
     }
-
     /**
      *   返回JSON数据给前端
      * @param user

@@ -77,7 +77,6 @@ public class UserParamterController {
           System.out.println( user1.getId());
           System.out.println( user1.getUsername());
 
-
       }
         //返回到前端
         ModelAndView model=new ModelAndView();
