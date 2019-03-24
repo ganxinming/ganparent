@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gan.mapper.SClassMapper">
+    <!--一对一，结果集进行迭代，嵌套结果
+    就是通过select语句查询出的结果，套进对象中。
+    就比如Sclass对象中有个teacher对象，就用association封装进一个对象
+    -->
+    <resultMap id="classAndTeacher" type="cn.gan.pojo.SClass">
+        <!--class本身消息-->
+        <id column="c_id" property="cId"/>
+        <result column="className" property="className"/>
+        <!-- teacher信息（一对一） -->
+        <!-- association：一对一关联映射 -->
+        <!-- property：关联信息查询的结果将要映射的扩展类中的对象属性名称 -->
+        <!-- id标签：建议在关联查询时必须写上，不写不会报错，但是会影响性能 -->
+        <association property="teacher" javaType="cn.gan.pojo.Teacher">
+            <id column="t_id" property="tId"/>
+            <result column="t_Name" property="tName"/>
+            <result column="c_id" property="cId"/>
+        </association>
+    </resultMap>
+   <!--一对一,这里注意teacher.c_id，像这种表.属性，不能加引号，变成teacher.'c_id'
+        但是他给的代码案例是加了，可能是数据库版本不一样。这里不加
+   -->
+    <select id="findClass" parameterType="int" resultMap="classAndTeacher">
+        SELECT  *
+        FROM  s_class,teacher
+        WHERE  s_class.c_id=#{id} AND s_class.c_id=teacher.c_id
+    </select>
+
+
+    <!--一对多-->
+    
+</mapper>
