@@ -16,4 +16,10 @@ public class ClassServiceImpl implements ClassService {
         SClass sClass= sClassMapper.findClass(id);
         return  sClass;
     }
+
+    @Override
+    public SClass findClassAndStudent(int id) {
+       SClass sClass= sClassMapper.findClassAndStudent(id);
+       return  sClass;
+    }
 }

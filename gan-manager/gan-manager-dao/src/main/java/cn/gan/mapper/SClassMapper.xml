@@ -32,5 +32,22 @@
 
 
     <!--一对多-->
-    
+    <!-- extends：可以继承一个已有的resultMap，指定resultMap的唯一标示即可 -->
+    <!-- 注意：继承时，只能继承type类型是一样的resultMap -->
+    <resultMap id="classAndStuddentAndTeacher" type="cn.gan.pojo.SClass" extends="classAndTeacher">
+        <!--注意类型是ofType-->
+        <collection property="student" ofType="cn.gan.pojo.Student">
+            <id column="s_id" property="sId"/>
+            <result column="s_Name" property="sName"/>
+            <result column="c_id" property="cId"/>
+        </collection>
+    </resultMap>
+    <!--一对多-->
+    <select id="findClassAndStudent" parameterType="int" resultMap="classAndStuddentAndTeacher">
+        SELECT  *
+        FROM  s_class,student,teacher
+        where s_class.c_id=#{id} AND teacher.c_id=s_class.c_id AND student.c_id=s_class.c_id
+
+    </select>
+
 </mapper>

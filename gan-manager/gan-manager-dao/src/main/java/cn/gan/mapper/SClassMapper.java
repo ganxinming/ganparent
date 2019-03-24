@@ -7,4 +7,5 @@ import cn.gan.pojo.SClass;
  */
 public interface SClassMapper {
      SClass findClass(int id);
+     SClass findClassAndStudent(int id);
 }
