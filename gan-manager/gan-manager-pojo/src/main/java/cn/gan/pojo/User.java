@@ -1,5 +1,7 @@
 package cn.gan.pojo;
 
+import java.util.Arrays;
+
 public class User {
     private int id;
     private String username;
@@ -27,5 +29,14 @@ public class User {
 
     public void setHobby(String[] hobby) {
         this.hobby = hobby;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", hobby=" + Arrays.toString(hobby) +
+                '}';
     }
 }

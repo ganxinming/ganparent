@@ -51,17 +51,10 @@ public class SpringMVCController {
         return view;
     }
 
-
-    @RequestMapping("/11")
-    public String getIndex11(){
-
-        return "index";
-    }
     //测试时间类型
     @RequestMapping("/getItem")
     public void getItem(TbItem item){
         System.out.println(item.getCreated());
-
     }
 
     //转发

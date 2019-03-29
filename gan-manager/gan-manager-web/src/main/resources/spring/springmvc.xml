@@ -9,13 +9,15 @@
 
 	<context:component-scan base-package="cn.*.controller" />
 	<mvc:annotation-driven />
-
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+	<!-- 处理静态资源的请求 -->
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
+	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
 	<!--配置拦截器
 	多个拦截器,顺序执行
 	在什么时候执行，在类中的注释里有
