@@ -18,10 +18,20 @@
 	<!-- 处理静态资源的请求 -->
 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
+
+	<!-- 定义文件上传解析器 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设定默认编码 -->
+		<property name="defaultEncoding" value="UTF-8" />
+		<!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+		<property name="maxUploadSize" value="5242880" />
+		<property name="maxInMemorySize" value="4096" />
+	</bean>
 	<!--配置拦截器
 	多个拦截器,顺序执行
 	在什么时候执行，在类中的注释里有
 	可以配置拦截的路径
+	其中path表示拦截的方法路径 ,其中/* :表示拦截一层目录 /** ：表示所有路径目录
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
@@ -31,6 +41,11 @@
 			<mvc:mapping path="/**"/>
 			<bean class="cn.gan.interceptor.Interceptor2"></bean>
 		</mvc:interceptor>
+		<mvc:interceptor>
+		可以只拦截需要的路径
+		<mvc:mapping path="/json"/>
+		<bean class="cn.gan.interceptor.InterceptorTime"></bean>
+	</mvc:interceptor>
 	</mvc:interceptors>
 	 -->
 </beans>

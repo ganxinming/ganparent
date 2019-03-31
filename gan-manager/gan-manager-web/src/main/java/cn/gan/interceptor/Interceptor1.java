@@ -19,7 +19,7 @@ public class Interceptor1 implements HandlerInterceptor{
 		return true;
 	}
 
-	//还没有调用Controller，还没返回modelAndView执行
+	//调用Controller，还没返回视图前一刻执行
 	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1,
 			Object arg2, ModelAndView arg3) throws Exception {
 		System.out.println("这是第一个拦截器Interceptor1。。。postHandle");
