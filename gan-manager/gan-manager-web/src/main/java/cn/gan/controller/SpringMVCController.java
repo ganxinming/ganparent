@@ -57,7 +57,12 @@ public class SpringMVCController {
         System.out.println(item.getCreated());
     }
 
-    //转发
+    /**
+     * 转发和直接返回字符串区别：
+     * 1.返回字符串是回去找视图解析器，拼接后缀后返回视图
+     * 2.转发一般就用于转发到另一个controller方法，似乎不能转发视图，会被拦截，反正我没成功.
+     * @return
+     */
     @RequestMapping("/testForward")
     public String testForward(){
         return  "forward: /user";
